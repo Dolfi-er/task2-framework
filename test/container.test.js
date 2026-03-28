@@ -37,7 +37,7 @@ test('Container: ошибка при отсутствии службы', () => {
   const container = new Container();
   assert.throws(
     () => container.get('unknown'),
-    /not registered/   // изменено: ищем любое сообщение с "not registered"
+    /not registered/   
   );
 });
 
