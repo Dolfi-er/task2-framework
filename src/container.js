@@ -30,4 +30,15 @@ export class Container {
 
         return entry.factory(this);
     }
+
+    //получение нескольких экземпляров службы по префиксу
+    getMany(prefix) {
+        const result = [];
+        for (const [key] of this._factories) {
+            if (key.startsWith(prefix)) {
+                result.push(this.get(key));
+            }
+        }
+        return result;
+    }
 }
